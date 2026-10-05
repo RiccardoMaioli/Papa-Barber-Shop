@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PAPA Barber Shop · Oleggio</title>
+    <meta
+      name="description"
+      content="PAPA Barber Shop a Oleggio (NO). Tagli, skin fade, taper e barba in Corso Matteotti. Prenota il tuo appuntamento."
+    />
+    <meta name="theme-color" content="#080b12" />
+    <meta property="og:title" content="PAPA Barber Shop · Oleggio" />
+    <meta property="og:description" content="Fade, taper e barba in Corso Matteotti, Oleggio. Prenota ora." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="nav" id="top">
+      <a class="logo" href="#top" aria-label="PAPA Barber Shop">PAPA<span>.</span></a>
+      <button class="burger" id="burger" aria-label="Apri menu" aria-expanded="false">
+        <span></span><span></span>
+      </button>
+      <nav class="menu" id="menu">
+        <a href="#servizi">Servizi</a>
+        <a href="#galleria">Lavori</a>
+        <a href="#orari">Orari</a>
+        <a href="#dove">Dove siamo</a>
+        <!-- SOSTITUISCI href con il link di prenotazione -->
+        <a class="btn btn-sm" href="#prenota">Prenota</a>
+      </nav>
+    </header>
+
+    <main>
+      <!-- HERO -->
+      <section class="hero">
+        <div class="hero-inner">
+          <p class="eyebrow">Barber shop · Oleggio (NO)</p>
+          <h1>PAPA<br />BARBER<br />SHOP</h1>
+          <p class="lead">
+            Fade, taper e barba curati nei dettagli. Corso Matteotti, nel centro di Oleggio.
+          </p>
+          <div class="cta-row">
+            <a class="btn" href="#prenota">Prenota ora</a>
+            <a class="btn btn-ghost" href="#servizi">Vedi i servizi</a>
+          </div>
+        </div>
+        <div class="hero-marquee" aria-hidden="true">
+          <div class="track">
+            <span>SKIN FADE</span><span>TAPER</span><span>BARBA</span><span>CLASSIC CUT</span>
+            <span>SKIN FADE</span><span>TAPER</span><span>BARBA</span><span>CLASSIC CUT</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- SERVIZI -->
+      <section class="section" id="servizi">
+        <div class="wrap">
+          <p class="eyebrow">Servizi</p>
+          <h2>Listino</h2>
+          <ul class="prices">
+            <li class="reveal">
+              <div>
+                <h3>Taglio</h3>
+                <p>Taglio uomo con forbice o macchinetta, finito a rasoio.</p>
+              </div>
+              <span class="price">€ 15</span>
+            </li>
+            <li class="reveal">
+              <div>
+                <h3>Skin fade</h3>
+                <p>Sfumatura a zero, rifinita su misura.</p>
+              </div>
+              <span class="price">€ 18</span>
+            </li>
+            <li class="reveal">
+              <div>
+                <h3>Taper</h3>
+                <p>Sfumatura pulita e morbida, ideale per ogni giorno.</p>
+              </div>
+              <span class="price">€ 16</span>
+            </li>
+            <li class="reveal">
+              <div>
+                <h3>Barba</h3>
+                <p>Regolazione, contorni e panno caldo.</p>
+              </div>
+              <span class="price">€ 10</span>
+            </li>
+            <li class="reveal">
+              <div>
+                <h3>Taglio + barba</h3>
+                <p>Il pacchetto completo.</p>
+              </div>
+              <span class="price">€ 25</span>
+            </li>
+            <li class="reveal">
+              <div>
+                <h3>Ragazzi (under 14)</h3>
+                <p>Taglio per i più giovani.</p>
+              </div>
+              <span class="price">€ 12</span>
+            </li>
+          </ul>
+          <p class="note">I prezzi sono indicativi: aggiornali con il listino reale.</p>
+        </div>
+      </section>
+
+      <!-- GALLERIA -->
+      <section class="section section-alt" id="galleria">
+        <div class="wrap">
+          <p class="eyebrow">Lavori</p>
+          <h2>Il risultato</h2>
+          <div class="gallery">
+            <!-- Sostituisci i blocchi con <img src="img/nome.jpg" alt="..."> -->
+            <div class="ph reveal">Foto 1</div>
+            <div class="ph reveal">Foto 2</div>
+            <div class="ph reveal">Foto 3</div>
+            <div class="ph reveal">Foto 4</div>
+            <div class="ph reveal">Foto 5</div>
+            <div class="ph reveal">Foto 6</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ORARI -->
+      <section class="section" id="orari">
+        <div class="wrap two">
+          <div>
+            <p class="eyebrow">Orari</p>
+            <h2>Quando<br />trovarci</h2>
+          </div>
+          <table class="hours">
+            <tbody>
+              <tr><th>Lunedì</th><td>Chiuso</td></tr>
+              <tr><th>Martedì</th><td>9:00 – 12:30 · 15:00 – 19:30</td></tr>
+              <tr><th>Mercoledì</th><td>9:00 – 12:30 · 15:00 – 19:30</td></tr>
+              <tr><th>Giovedì</th><td>9:00 – 12:30 · 15:00 – 19:30</td></tr>
+              <tr><th>Venerdì</th><td>9:00 – 12:30 · 15:00 – 19:30</td></tr>
+              <tr><th>Sabato</th><td>9:00 – 18:00</td></tr>
+              <tr><th>Domenica</th><td>Chiuso</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- DOVE -->
+      <section class="section section-alt" id="dove">
+        <div class="wrap two">
+          <div>
+            <p class="eyebrow">Dove siamo</p>
+            <h2>Corso<br />Matteotti</h2>
+            <p class="lead">
+              PAPA Barber Shop<br />
+              Corso Matteotti, Oleggio (NO)
+            </p>
+            <p class="lead">
+              Tel. <a href="tel:+390000000000">+39 000 000 0000</a>
+            </p>
+            <a
+              class="btn btn-ghost"
+              target="_blank"
+              rel="noopener"
+              href="https://www.google.com/maps/search/?api=1&query=Corso+Matteotti+Oleggio"
+              >Apri su Maps</a
+            >
+          </div>
+          <iframe
+            class="map"
+            title="Mappa di Oleggio"
+            loading="lazy"
+            src="https://www.openstreetmap.org/export/embed.html?bbox=8.630%2C45.595%2C8.650%2C45.604&layer=mapnik&marker=45.5988%2C8.6409"
+          ></iframe>
+        </div>
+      </section>
+
+      <!-- PRENOTA -->
+      <section class="section book" id="prenota">
+        <div class="wrap center">
+          <h2>Prenota il tuo posto</h2>
+          <p class="lead">Scegli giorno e orario, ci vediamo in poltrona.</p>
+          <!-- SOSTITUISCI href con il tuo link (Barber App, WhatsApp, ecc.) -->
+          <a class="btn btn-lg" href="https://wa.me/390000000000" target="_blank" rel="noopener"
+            >Prenota ora</a
+          >
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>© <span id="year"></span> PAPA Barber Shop · Corso Matteotti, Oleggio (NO)</p>
+      <a href="#top">Torna su ↑</a>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
