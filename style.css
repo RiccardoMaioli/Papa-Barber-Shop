@@ -3,13 +3,13 @@
    ========================================================= */
 :root{
   --ink:#0d0d0d;
-  --bg:#f5f1ec;
-  --soft:#ffffff;
+  --bg:#dfe5f1;       /* blu navy tenue — sfondo pagine */
+  --soft:#ffffff;     /* bianco puro — sezioni alternate */
   --paper:#ffffff;
   --muted:#6b6168;
   --accent:#c8102e;   /* rosso barber */
   --blue:#1e3a8a;     /* blu navy */
-  --line:#e0d8d0;
+  --line:#c8d2e3;     /* linea leggermente più scura per staccare dal nuovo bg */
   --wa:#1f8f52;
 }
 
