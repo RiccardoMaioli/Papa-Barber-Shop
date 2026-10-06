@@ -3,13 +3,13 @@
    ========================================================= */
 :root{
   --ink:#0d0d0d;
-  --bg:#dfe5f1;       /* blu navy tenue — sfondo pagine */
+  --bg:#1e3a8a;       /* blu navy pieno — sfondo body */
   --soft:#ffffff;     /* bianco puro — sezioni alternate */
   --paper:#ffffff;
-  --muted:#6b6168;
+  --muted:#c8d2e3;    /* testo secondario chiaro, visibile su blu */
   --accent:#c8102e;   /* rosso barber */
   --blue:#1e3a8a;     /* blu navy */
-  --line:#c8d2e3;     /* linea leggermente più scura per staccare dal nuovo bg */
+  --line:#4a5fa0;     /* linea visibile sul blu */
   --wa:#1f8f52;
 }
 
@@ -18,7 +18,7 @@ html{scroll-behavior:smooth}
 body{
   margin:0;
   background:var(--bg);
-  color:var(--ink);
+  color:#ffffff;
   font:17px/1.7 "Nunito Sans",system-ui,sans-serif;
 }
 h1,h2,h3{
@@ -99,7 +99,11 @@ nav .cta:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
 
 /* ---------- SEZIONI ---------- */
 section{padding:84px 0}
-.soft{background:var(--soft)}
+.soft{background:var(--soft);color:var(--ink)}
+.soft .muted,.soft span{color:#6b6168}
+.soft .list li{border-bottom-color:#e0d8d0}
+.soft .list li > b:last-child{color:var(--accent)}
+.soft .note{color:#6b6168}
 .dark{background:var(--ink);color:#fff}
 .dark p{color:#d8cfd3}
 h2{font-size:clamp(2rem,5vw,3rem);text-transform:uppercase;margin-bottom:30px;letter-spacing:.06em}
@@ -167,7 +171,7 @@ h2{font-size:clamp(2rem,5vw,3rem);text-transform:uppercase;margin-bottom:30px;le
   border-radius:999px;
   box-shadow:0 8px 24px rgba(0,0,0,.35);
 }
-.float-book:hover{background:var(--blue)}
+.float-book:hover{background:var(--ink)}
 
 /* ---------- FOOTER ---------- */
 footer{background:var(--ink);color:#d8cfd3;padding:48px 0 36px;font-size:.92rem}
