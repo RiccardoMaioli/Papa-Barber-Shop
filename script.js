@@ -115,49 +115,64 @@
     revealables.forEach((el) => el.classList.add('in'));
   }
 
-  /* ---------- 8. Lightbox galleria ---------- */
-  const galleryItems = document.querySelectorAll('.gallery .ph, .gallery img');
-  if (galleryItems.length) {
-    // crea overlay una sola volta
-    const lb = document.createElement('div');
-    lb.className = 'lightbox';
-    lb.innerHTML = '<button class="lightbox-close" aria-label="Chiudi">×</button><div class="lightbox-inner"></div>';
-    document.body.appendChild(lb);
-    const inner = lb.querySelector('.lightbox-inner');
+  /* ---------- 8. Lightbox galleria (self-contained) ---------- */
+const galleryItems = document.querySelectorAll('.gallery img, .gallery .ph');
+if (galleryItems.length) {
+  const lb = document.createElement('div');
+  lb.style.cssText =
+    'position:fixed;inset:0;z-index:9999;background:rgba(13,13,13,.92);' +
+    'display:none;align-items:center;justify-content:center;padding:24px;cursor:zoom-out';
+  lb.innerHTML =
+    '<button aria-label="Chiudi" style="position:absolute;top:18px;right:22px;' +
+    'background:transparent;border:0;color:#fff;font-size:2rem;line-height:1;' +
+    'cursor:pointer;padding:8px">×</button>' +
+    '<div class="lightbox-inner"></div>';
+  document.body.appendChild(lb);
+  const inner = lb.querySelector('.lightbox-inner');
 
-    const open = (src, alt) => {
-      inner.innerHTML = '';
-      if (src) {
-        const img = document.createElement('img');
-        img.src = src;
-        img.alt = alt || '';
-        inner.appendChild(img);
-      } else {
-        const ph = document.createElement('div');
-        ph.className = 'lightbox-ph';
-        ph.textContent = alt || 'Foto';
-        inner.appendChild(ph);
-      }
-      lb.classList.add('open');
-      document.body.style.overflow = 'hidden';
-    };
-    const close = () => {
-      lb.classList.remove('open');
-      document.body.style.overflow = '';
-    };
+  const open = (src, alt) => {
+    inner.innerHTML = '';
+    if (src) {
+      const img = document.createElement('img');
+      img.src = src;
+      img.alt = alt || '';
+      img.style.cssText = 'max-width:90vw;max-height:85vh;display:block;box-shadow:0 20px 60px rgba(0,0,0,.6)';
+      inner.appendChild(img);
+    } else {
+      const ph = document.createElement('div');
+      ph.textContent = alt || 'Foto';
+      ph.style.cssText =
+        'width:min(80vw,600px);aspect-ratio:4/5;display:flex;align-items:center;' +
+        'justify-content:center;background:#111;color:#c8102e;font-size:2rem;' +
+        'letter-spacing:.2em;text-transform:uppercase;font-family:sans-serif';
+      inner.appendChild(ph);
+    }
+    lb.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+  };
 
-    galleryItems.forEach((el) => {
-      el.addEventListener('click', () => {
-        if (el.tagName === 'IMG') open(el.src, el.alt);
-        else open(null, el.textContent);
-      });
+  const close = () => {
+    lb.style.display = 'none';
+    document.body.style.overflow = '';
+  };
+
+  galleryItems.forEach((el) => {
+    el.style.cursor = 'zoom-in';
+    el.addEventListener('click', (e) => {
+      e.preventDefault();
+      if (el.tagName === 'IMG') open(el.src, el.alt);
+      else open(null, el.textContent);
     });
-    lb.addEventListener('click', (e) => {
-      if (e.target === lb || e.target.classList.contains('lightbox-close')) close();
-    });
-    document.addEventListener('keydown', (e) => e.key === 'Escape' && close());
-  }
+  });
 
+  lb.addEventListener('click', (e) => {
+    if (e.target === lb || e.target.tagName === 'BUTTON') close();
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') close();
+  });
+}
+   
   /* ---------- 9. Nascondi pulsante flottante nella sezione prenota ---------- */
   const floatBtn = document.querySelector('.float-book');
   const bookSection = document.getElementById('prenota');
