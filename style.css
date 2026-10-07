@@ -3,13 +3,13 @@
    ========================================================= */
 :root{
   --ink:#0d0d0d;
-  --bg:#0d0d0d;       /* base scura (sotto la trama) */
-  --soft:transparent; /* le sezioni .soft non coprono la trama */
+  --bg:#f5f1ec;
+  --soft:#ffffff;
   --paper:#ffffff;
-  --muted:#c8d2e3;    /* testo secondario chiaro */
+  --muted:#6b6168;
   --accent:#c8102e;   /* rosso barber */
   --blue:#1e3a8a;     /* blu navy */
-  --line:rgba(255,255,255,.25);
+  --line:#e0d8d0;
   --wa:#1f8f52;
 }
 
@@ -17,12 +17,9 @@
 html{scroll-behavior:smooth}
 body{
   margin:0;
-  color:#ffffff;
+  background:var(--bg);
+  color:var(--ink);
   font:17px/1.7 "Nunito Sans",system-ui,sans-serif;
-  background:
-    repeating-linear-gradient(135deg,#0d0d0d 0 30px,#c8102e 30px 32px,#0d0d0d 32px 62px,#1e3a8a 62px 64px),
-    #0d0d0d;
-  background-attachment:fixed;
 }
 h1,h2,h3{
   font-family:"Bebas Neue",Georgia,serif;
@@ -86,22 +83,40 @@ nav .cta:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
 }
 .cta-row{display:flex;gap:14px;flex-wrap:wrap}
 
+/* ---------- SEZIONI CON TRAMA A STRISCE (Lavori · Dove siamo) ---------- */
+main > section:nth-of-type(3),
+main > section:nth-of-type(5){
+  color:#fff;
+  background:
+    repeating-linear-gradient(135deg,#0d0d0d 0 30px,#c8102e 30px 32px,#0d0d0d 32px 62px,#1e3a8a 62px 64px),
+    #0d0d0d;
+  background-size:cover;
+  background-position:center;
+}
+main > section:nth-of-type(3) .kicker,
+main > section:nth-of-type(5) .kicker{color:#fff}
+main > section:nth-of-type(3) .btn,
+main > section:nth-of-type(5) .btn{border-color:#fff}
+main > section:nth-of-type(3) p,
+main > section:nth-of-type(5) p{color:#fff}
+
 /* ---------- BOTTONI ---------- */
 .btn{
   display:inline-block;padding:14px 30px;background:var(--ink);color:#fff !important;
   text-decoration:none;font-size:.82rem;letter-spacing:.18em;text-transform:uppercase;
   border:1px solid var(--ink);font-weight:700;border-radius:6px;
 }
-.btn:hover{background:var(--accent);border-color:var(--accent)}
+.btn:hover{background:var(--blue);border-color:var(--blue)}
 .btn.light{background:#fff;color:var(--ink) !important;border-color:#fff}
-.btn.light:hover{background:#e8e8e8;border-color:#e8e8e8}
+.btn.light:hover{background:var(--bg);border-color:var(--bg)}
 .btn.red{background:var(--accent);border-color:var(--accent)}
-.btn.red:hover{background:#0d0d0d;border-color:#0d0d0d}
+.btn.red:hover{background:var(--blue);border-color:var(--blue)}
 .btn.wa{background:var(--wa);border-color:var(--wa)}
 .btn.small{padding:10px 20px;font-size:.75rem}
 
 /* ---------- SEZIONI ---------- */
-section{padding:84px 0;background:transparent}
+section{padding:84px 0}
+.soft{background:var(--soft)}
 .dark{background:var(--ink);color:#fff}
 .dark p{color:#d8cfd3}
 h2{font-size:clamp(2rem,5vw,3rem);text-transform:uppercase;margin-bottom:30px;letter-spacing:.06em}
@@ -136,7 +151,7 @@ h2{font-size:clamp(2rem,5vw,3rem);text-transform:uppercase;margin-bottom:30px;le
   font-size:1.4rem;
   letter-spacing:.2em;
   text-transform:uppercase;
-  border:1px solid #fff;
+  border:1px solid var(--ink);
   transition:transform .25s ease, filter .25s ease;
 }
 .gallery .ph:nth-child(3n+1){background:repeating-linear-gradient(45deg,#0d0d0d 0 12px,#1a1a1a 12px 24px);color:var(--accent)}
@@ -169,7 +184,7 @@ h2{font-size:clamp(2rem,5vw,3rem);text-transform:uppercase;margin-bottom:30px;le
   border-radius:999px;
   box-shadow:0 8px 24px rgba(0,0,0,.35);
 }
-.float-book:hover{background:var(--ink)}
+.float-book:hover{background:var(--blue)}
 
 /* ---------- FOOTER ---------- */
 footer{background:var(--ink);color:#d8cfd3;padding:48px 0 36px;font-size:.92rem}
