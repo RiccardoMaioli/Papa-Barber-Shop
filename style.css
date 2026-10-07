@@ -3,13 +3,13 @@
    ========================================================= */
 :root{
   --ink:#0d0d0d;
-  --bg:#1e3a8a;       /* blu navy pieno — sfondo body */
-  --soft:#1e3a8a;     /* anche .soft ora è blu */
+  --bg:#0d0d0d;       /* base scura (sotto la trama) */
+  --soft:transparent; /* le sezioni .soft non coprono la trama */
   --paper:#ffffff;
-  --muted:#c8d2e3;    /* testo secondario chiaro, visibile su blu */
+  --muted:#c8d2e3;    /* testo secondario chiaro */
   --accent:#c8102e;   /* rosso barber */
   --blue:#1e3a8a;     /* blu navy */
-  --line:#4a5fa0;     /* linea visibile sul blu */
+  --line:rgba(255,255,255,.25);
   --wa:#1f8f52;
 }
 
@@ -17,9 +17,12 @@
 html{scroll-behavior:smooth}
 body{
   margin:0;
-  background:var(--bg);
   color:#ffffff;
   font:17px/1.7 "Nunito Sans",system-ui,sans-serif;
+  background:
+    repeating-linear-gradient(135deg,#0d0d0d 0 30px,#c8102e 30px 32px,#0d0d0d 32px 62px,#1e3a8a 62px 64px),
+    #0d0d0d;
+  background-attachment:fixed;
 }
 h1,h2,h3{
   font-family:"Bebas Neue",Georgia,serif;
@@ -83,22 +86,6 @@ nav .cta:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
 }
 .cta-row{display:flex;gap:14px;flex-wrap:wrap}
 
-/* ---------- SEZIONI CON TRAMA A STRISCE (come la hero) ---------- */
-.striped{
-  color:#fff;
-  background:
-    repeating-linear-gradient(135deg,#0d0d0d 0 30px,#c8102e 30px 32px,#0d0d0d 32px 62px,#1e3a8a 62px 64px),
-    #0d0d0d;
-  background-size:cover;
-  background-position:center;
-}
-.striped .kicker{color:#fff}
-.striped .list li{border-bottom-color:rgba(255,255,255,.25)}
-.striped .list span{color:rgba(255,255,255,.8)}
-.striped .list li > b:last-child{color:#fff}
-.striped .note{color:rgba(255,255,255,.7)}
-.striped .btn{border-color:#fff}
-
 /* ---------- BOTTONI ---------- */
 .btn{
   display:inline-block;padding:14px 30px;background:var(--ink);color:#fff !important;
@@ -114,8 +101,7 @@ nav .cta:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
 .btn.small{padding:10px 20px;font-size:.75rem}
 
 /* ---------- SEZIONI ---------- */
-section{padding:84px 0}
-.soft{background:var(--soft)}
+section{padding:84px 0;background:transparent}
 .dark{background:var(--ink);color:#fff}
 .dark p{color:#d8cfd3}
 h2{font-size:clamp(2rem,5vw,3rem);text-transform:uppercase;margin-bottom:30px;letter-spacing:.06em}
