@@ -4,7 +4,7 @@
 :root{
   --ink:#0d0d0d;
   --bg:#1e3a8a;       /* blu navy pieno — sfondo body */
-  --soft:#ffffff;     /* bianco puro — sezioni alternate */
+  --soft:#1e3a8a;     /* anche .soft ora è blu */
   --paper:#ffffff;
   --muted:#c8d2e3;    /* testo secondario chiaro, visibile su blu */
   --accent:#c8102e;   /* rosso barber */
@@ -83,27 +83,39 @@ nav .cta:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
 }
 .cta-row{display:flex;gap:14px;flex-wrap:wrap}
 
+/* ---------- SEZIONI CON TRAMA A STRISCE (come la hero) ---------- */
+.striped{
+  color:#fff;
+  background:
+    repeating-linear-gradient(135deg,#0d0d0d 0 30px,#c8102e 30px 32px,#0d0d0d 32px 62px,#1e3a8a 62px 64px),
+    #0d0d0d;
+  background-size:cover;
+  background-position:center;
+}
+.striped .kicker{color:#fff}
+.striped .list li{border-bottom-color:rgba(255,255,255,.25)}
+.striped .list span{color:rgba(255,255,255,.8)}
+.striped .list li > b:last-child{color:#fff}
+.striped .note{color:rgba(255,255,255,.7)}
+.striped .btn{border-color:#fff}
+
 /* ---------- BOTTONI ---------- */
 .btn{
   display:inline-block;padding:14px 30px;background:var(--ink);color:#fff !important;
   text-decoration:none;font-size:.82rem;letter-spacing:.18em;text-transform:uppercase;
   border:1px solid var(--ink);font-weight:700;border-radius:6px;
 }
-.btn:hover{background:var(--blue);border-color:var(--blue)}
+.btn:hover{background:var(--accent);border-color:var(--accent)}
 .btn.light{background:#fff;color:var(--ink) !important;border-color:#fff}
-.btn.light:hover{background:var(--bg);border-color:var(--bg)}
+.btn.light:hover{background:#e8e8e8;border-color:#e8e8e8}
 .btn.red{background:var(--accent);border-color:var(--accent)}
-.btn.red:hover{background:var(--blue);border-color:var(--blue)}
+.btn.red:hover{background:#0d0d0d;border-color:#0d0d0d}
 .btn.wa{background:var(--wa);border-color:var(--wa)}
 .btn.small{padding:10px 20px;font-size:.75rem}
 
 /* ---------- SEZIONI ---------- */
 section{padding:84px 0}
-.soft{background:var(--soft);color:var(--ink)}
-.soft .muted,.soft span{color:#6b6168}
-.soft .list li{border-bottom-color:#e0d8d0}
-.soft .list li > b:last-child{color:var(--accent)}
-.soft .note{color:#6b6168}
+.soft{background:var(--soft)}
 .dark{background:var(--ink);color:#fff}
 .dark p{color:#d8cfd3}
 h2{font-size:clamp(2rem,5vw,3rem);text-transform:uppercase;margin-bottom:30px;letter-spacing:.06em}
@@ -138,7 +150,7 @@ h2{font-size:clamp(2rem,5vw,3rem);text-transform:uppercase;margin-bottom:30px;le
   font-size:1.4rem;
   letter-spacing:.2em;
   text-transform:uppercase;
-  border:1px solid var(--ink);
+  border:1px solid #fff;
   transition:transform .25s ease, filter .25s ease;
 }
 .gallery .ph:nth-child(3n+1){background:repeating-linear-gradient(45deg,#0d0d0d 0 12px,#1a1a1a 12px 24px);color:var(--accent)}
