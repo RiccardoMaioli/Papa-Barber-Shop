@@ -215,3 +215,16 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-off
   .logo img{height:56px;max-width:160px}
   .float-book{right:12px;bottom:12px;padding:12px 18px;font-size:1rem}
 }
+/* ---------- Separatore a strisce (pali del barbiere) ---------- */
+.section-divider{
+  height:14px;
+  width:100%;
+  background:repeating-linear-gradient(
+    90deg,
+    #c8102e 0 14px,
+    #ffffff 14px 28px,
+    #1e3a8a 28px 42px
+  );
+  border-top:1px solid rgba(0,0,0,.15);
+  border-bottom:1px solid rgba(0,0,0,.15);
+}
