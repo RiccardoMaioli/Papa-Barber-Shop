@@ -77,9 +77,42 @@ nav .cta:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
   background:repeating-linear-gradient(90deg,#c8102e 0 30px,#ffffff 30px 60px,#1e3a8a 60px 90px);
   z-index:5;
 }
-.hero .wrap{padding-top:140px;padding-bottom:12vh;width:100%}
-.hero h1{font-size:clamp(3rem,10vw,7rem);text-transform:uppercase;max-width:14ch}
+.hero .wrap{padding-top:180px;padding-bottom:12vh;width:100%}
+.hero h1{
+  font-size:clamp(3.5rem,12vw,8rem);
+  text-transform:uppercase;
+  max-width:14ch;
+  line-height:.95;
+  margin:12px 0 28px;
+  color:#fff;
+  text-shadow:0 4px 24px rgba(0,0,0,.5);
+}
 .hero p{margin:20px 0 32px;font-size:1.1rem;opacity:.92}
+
+/* kicker hero: barretta rossa + testo bianco */
+.kicker{
+  font-size:.8rem;
+  letter-spacing:.28em;
+  text-transform:uppercase;
+  color:#fff;
+  margin-bottom:14px;
+  display:inline-flex;
+  align-items:center;
+  gap:12px;
+  font-weight:700;
+  padding-left:14px;
+  position:relative;
+}
+.kicker::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:50%;
+  transform:translateY(-50%);
+  width:4px;
+  height:1.1em;
+  background:var(--accent);
+}
 
 /* ---------- BOTTONI ---------- */
 .btn{
@@ -191,10 +224,15 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-off
   .home nav a:hover,.home nav a[aria-current]{color:var(--accent);opacity:1}
   section{padding:60px 0}
   .hero{min-height:88vh}
-  .hero .wrap{padding-top:100px}
-  .hero-logo{max-width:70vw;margin-left:-12px}
+  .hero .wrap{padding-top:120px}
+  .hero h1{font-size:clamp(3rem,15vw,5rem)}
   .logo img{height:56px;max-width:160px}
   .float-book{right:12px;bottom:12px;padding:12px 18px;font-size:1rem}
+  /* Galleria: 2 per riga su mobile */
+  .gallery{
+    grid-template-columns:repeat(2,1fr);
+    gap:10px;
+  }
 }
 /* ---------- Separatore a strisce (pali del barbiere) ---------- */
 .section-divider{
