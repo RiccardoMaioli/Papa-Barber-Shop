@@ -247,3 +247,19 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-off
   border-top:1px solid rgba(0,0,0,.15);
   border-bottom:1px solid rgba(0,0,0,.15);
 }
+/* ---------- TRAMA A STRISCE su Lavori e Dove siamo ---------- */
+main > section:nth-of-type(3),
+main > section:nth-of-type(5){
+  color:#fff;
+  background:
+    repeating-linear-gradient(135deg,#0d0d0d 0 30px,#c8102e 30px 32px,#0d0d0d 32px 62px,#1e3a8a 62px 64px),
+    #0d0d0d;
+  background-size:cover;
+  background-position:center;
+}
+main > section:nth-of-type(3) .kicker,
+main > section:nth-of-type(5) .kicker{color:#fff}
+main > section:nth-of-type(3) .btn,
+main > section:nth-of-type(5) .btn{border-color:#fff}
+main > section:nth-of-type(3) p,
+main > section:nth-of-type(5) p{color:#fff}
