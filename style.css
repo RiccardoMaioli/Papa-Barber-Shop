@@ -63,42 +63,23 @@ nav .cta:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
   display:flex;
   align-items:flex-end;
   color:#fff;
+  position:relative;
   background:
-    linear-gradient(180deg,rgba(0,0,0,.35),rgba(0,0,0,.75)),
-    repeating-linear-gradient(135deg,#0d0d0d 0 30px,#c8102e 30px 32px,#0d0d0d 32px 62px,#1e3a8a 62px 64px),
+    linear-gradient(180deg, rgba(0,0,0,.35) 0%, rgba(0,0,0,.55) 40%, rgba(0,0,0,.9) 100%),
+    url('/img/hero.jpg') center/cover no-repeat,
     #0d0d0d;
-  background-size:cover;
-  background-position:center;
+}
+.hero::before{
+  content:"";
+  position:absolute;
+  top:0;left:0;right:0;
+  height:8px;
+  background:repeating-linear-gradient(90deg,#c8102e 0 30px,#ffffff 30px 60px,#1e3a8a 60px 90px);
+  z-index:5;
 }
 .hero .wrap{padding-top:140px;padding-bottom:12vh;width:100%}
 .hero h1{font-size:clamp(3rem,10vw,7rem);text-transform:uppercase;max-width:14ch}
 .hero p{margin:20px 0 32px;font-size:1.1rem;opacity:.92}
-.kicker{font-size:.78rem;letter-spacing:.28em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:block;font-weight:700}
-.intro{font-size:1.2rem;line-height:1.7;max-width:34ch}
-.hero-logo{
-  max-width:min(60vw,420px);
-  height:auto;
-  display:block;
-  margin:20px 0 32px -20px;
-}
-.cta-row{display:flex;gap:14px;flex-wrap:wrap}
-
-/* ---------- SEZIONI CON TRAMA A STRISCE (Lavori · Dove siamo) ---------- */
-main > section:nth-of-type(3),
-main > section:nth-of-type(5){
-  color:#fff;
-  background:
-    repeating-linear-gradient(135deg,#0d0d0d 0 30px,#c8102e 30px 32px,#0d0d0d 32px 62px,#1e3a8a 62px 64px),
-    #0d0d0d;
-  background-size:cover;
-  background-position:center;
-}
-main > section:nth-of-type(3) .kicker,
-main > section:nth-of-type(5) .kicker{color:#fff}
-main > section:nth-of-type(3) .btn,
-main > section:nth-of-type(5) .btn{border-color:#fff}
-main > section:nth-of-type(3) p,
-main > section:nth-of-type(5) p{color:#fff}
 
 /* ---------- BOTTONI ---------- */
 .btn{
