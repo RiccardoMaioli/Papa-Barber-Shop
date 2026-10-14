@@ -89,7 +89,7 @@ nav .cta:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
 }
 .hero p{margin:20px 0 32px;font-size:1.1rem;opacity:.92}
 
-/* kicker hero: barretta rossa + testo bianco */
+/* kicker generale (etichette sezioni) */
 .kicker{
   font-size:.8rem;
   letter-spacing:.28em;
@@ -112,6 +112,12 @@ nav .cta:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
   width:4px;
   height:1.1em;
   background:var(--accent);
+}
+
+/* kicker nella hero: sotto il titolo, con margini corretti */
+.hero .kicker{
+  margin-top:6px;
+  margin-bottom:28px;
 }
 
 /* ---------- BOTTONI ---------- */
@@ -210,6 +216,38 @@ footer a:hover{color:var(--accent)}
 /* ---------- FOCUS ---------- */
 a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
 
+/* ---------- TRAMA A STRISCE su Lavori e Dove siamo ---------- */
+/* Nel <main>: 1=Hero, 2=Servizi, 3=Lavori, 4=Orari, 5=Dove, 6=Prenota */
+main > section:nth-of-type(3),
+main > section:nth-of-type(5){
+  color:#fff;
+  background:
+    repeating-linear-gradient(135deg,#0d0d0d 0 30px,#c8102e 30px 32px,#0d0d0d 32px 62px,#1e3a8a 62px 64px),
+    #0d0d0d;
+  background-size:cover;
+  background-position:center;
+}
+main > section:nth-of-type(3) .kicker,
+main > section:nth-of-type(5) .kicker{color:#fff}
+main > section:nth-of-type(3) .btn,
+main > section:nth-of-type(5) .btn{border-color:#fff}
+main > section:nth-of-type(3) p,
+main > section:nth-of-type(5) p{color:#fff}
+
+/* ---------- SEPARATORE A STRISCE (pali del barbiere) ---------- */
+.section-divider{
+  height:14px;
+  width:100%;
+  background:repeating-linear-gradient(
+    90deg,
+    #c8102e 0 14px,
+    #ffffff 14px 28px,
+    #1e3a8a 28px 42px
+  );
+  border-top:1px solid rgba(0,0,0,.15);
+  border-bottom:1px solid rgba(0,0,0,.15);
+}
+
 /* ---------- MOBILE ---------- */
 @media (max-width:760px){
   .menu{display:block}
@@ -234,32 +272,3 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-off
     gap:10px;
   }
 }
-/* ---------- Separatore a strisce (pali del barbiere) ---------- */
-.section-divider{
-  height:14px;
-  width:100%;
-  background:repeating-linear-gradient(
-    90deg,
-    #c8102e 0 14px,
-    #ffffff 14px 28px,
-    #1e3a8a 28px 42px
-  );
-  border-top:1px solid rgba(0,0,0,.15);
-  border-bottom:1px solid rgba(0,0,0,.15);
-}
-/* ---------- TRAMA A STRISCE su Lavori e Dove siamo ---------- */
-main > section:nth-of-type(3),
-main > section:nth-of-type(5){
-  color:#fff;
-  background:
-    repeating-linear-gradient(135deg,#0d0d0d 0 30px,#c8102e 30px 32px,#0d0d0d 32px 62px,#1e3a8a 62px 64px),
-    #0d0d0d;
-  background-size:cover;
-  background-position:center;
-}
-main > section:nth-of-type(3) .kicker,
-main > section:nth-of-type(5) .kicker{color:#fff}
-main > section:nth-of-type(3) .btn,
-main > section:nth-of-type(5) .btn{border-color:#fff}
-main > section:nth-of-type(3) p,
-main > section:nth-of-type(5) p{color:#fff}
